@@ -1,0 +1,5 @@
+database:
+    hostname: localhost
+    dbname:   e_ticket
+    user:     root
+    password: ~

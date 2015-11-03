@@ -1,0 +1,19 @@
+{
+    "name": "julienguizot/e-ticket-api",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hugo Tostain",
+            "email": "ugotost1@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {
+        "doctrine/orm": "^2.5",
+        "swiftmailer/swiftmailer": "^5.4",
+        "symfony/yaml": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {"App\\": "src/"}
+    }
+}

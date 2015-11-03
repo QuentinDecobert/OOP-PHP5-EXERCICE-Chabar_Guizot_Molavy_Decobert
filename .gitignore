@@ -1,0 +1,4 @@
+/config/parameters.yml
+/vendor/
+/bin/
+.idea/
