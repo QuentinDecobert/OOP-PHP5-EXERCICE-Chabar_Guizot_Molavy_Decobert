@@ -1,4 +1,5 @@
 database:
+    driver:   pdo_mysql
     hostname: localhost
     dbname:   e_ticket
     user:     root

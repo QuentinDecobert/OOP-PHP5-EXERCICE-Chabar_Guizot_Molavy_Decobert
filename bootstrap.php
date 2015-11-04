@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__.'vendor/autoload.php';
+require_once __DIR__.'/vendor/autoload.php';
 
 use Doctrine\ORM\Tools\Setup;
 use Doctrine\ORM\EntityManager;
@@ -11,12 +11,7 @@ $paths = [
 $isDevMode = true;
 
 // the connection configuration
-$dbParams = [
-    'driver'   => 'pdo_mysql',
-    'user'     => 'root',
-    'password' => '',
-    'dbname'   => 'foo',
-];
+$dbParams = \Symfony\Component\Yaml\Yaml::parse(file_get_contents(__DIR__.'/config/parameters.yml'))['database'];
+$config   = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
 
-$config = Setup::createAnnotationMetadataConfiguration($paths, $isDevMode);
-$entityManager = EntityManager::create($dbParams, $config);
+return EntityManager::create($dbParams, $config);
