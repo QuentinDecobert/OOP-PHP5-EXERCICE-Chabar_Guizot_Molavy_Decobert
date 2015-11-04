@@ -3,7 +3,11 @@
 namespace App\Controller;
 
 
-class BookingController
+
+use App\Entity\Booking;
+use App\Entity\BookingRepository;
+
+class BookingController extends BaseController
 {
     public function index()
     {

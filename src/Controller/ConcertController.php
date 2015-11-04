@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
+use App\Entity\Concert;
+use App\Entity\ConcertRepository;
 
-class ConcertController
+class ConcertController extends BaseController
 {
     public function index()
     {
@@ -15,7 +17,7 @@ class ConcertController
 
     public function create()
     {
-            $param = json_decode($app->request->getBody());
+          //  $param = json_decode($app->request->getBody());
             $title = $param->title;
             $datetime = $param->datetime;
             $artist =  $param->artist;

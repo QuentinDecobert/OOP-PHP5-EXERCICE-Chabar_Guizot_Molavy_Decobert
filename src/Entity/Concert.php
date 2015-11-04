@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="App\Entity\ConcertRepository")
  * @Table(name="concert")
  */
 class Concert
