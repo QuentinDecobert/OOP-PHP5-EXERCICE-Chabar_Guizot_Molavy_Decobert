@@ -15,16 +15,20 @@ class ConcertController extends BaseController
 
     public function create()
     {
-        /*
-            $title = $param->title;
-            $datetime = $param->datetime;
-            $artist =  $param->artist;
-            $place = $param->place;
-            $price = $param->price;
-            $type = $param->type;
-            $city = $param->city;
-            $country = $param->country;
-            $picture = $param->picture;
+
+        /*$title = $param->title;
+        $datetime = $param->datetime;
+        $artist =  $param->artist;
+        $place = $param->place;
+        $price = $param->price;
+        $type = $param->type;
+        $city = $param->city;
+        $country = $param->country;
+        $picture = $param->picture;
+        $id_client = !empty($_GET['username']) ? $_GET['username'] : null;
+        $id_concert = !empty($_GET['password']) ? $_GET['password'] : null;
+        $price = !empty($_GET['username']) ? $_GET['username'] : null;
+        $place = !empty($_GET['password']) ? $_GET['password'] : null;
 
 
         $concert = new Concert();
@@ -39,7 +43,8 @@ class ConcertController extends BaseController
         $concert->setPicture($picture);
 
         $this->entityManager->persist($concert);
-        $this->entityManager->flush();*/
+        $this->entityManager->flush();
+        */
     }
     public function find($id)
     {

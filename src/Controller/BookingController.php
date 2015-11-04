@@ -14,18 +14,21 @@ class BookingController
     }
     public function create()
     {
-        $param = json_decode($app->request->getBody());
-        $number= $param->number;
-        $price = $param->price;
-        $concert = $param->concert;
-        $customer = $param->customer;
+        $customer = !empty($_GET['id_client']) ? (int)$_GET['id_client'] : null;
+        $concert  = !empty($_GET['id_concert']) ? (int)$_GET['id_concert'] : null;
+        $price    = !empty($_GET['price']) ? $_GET['price'] : null;
+        $number   = !empty($_GET['place']) ? $_GET['place'] : null;
 
+        $repo1 = $this->entityManager->getRepository('App\\Entity\\Customer');
+        $repo2 = $this->entityManager->getRepository('App\\Entity\\Concert');
+        $cust = $repo1->find($customer);
+        $cons = $repo2->find($concert);
 
         $booking = new Booking();
         $booking->setNumber($number);
         $booking->setPrice($price);
-        $booking->setConcert($concert);
-        $booking->setCustomer($customer);
+        $booking->setConcert($cons);
+        $booking->setCustomer($cust);
 
         $this->entityManager->persist($booking);
         $this->entityManager->flush();

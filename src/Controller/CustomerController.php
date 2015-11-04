@@ -58,8 +58,14 @@ class CustomerController extends BaseController
 
         $count = (int) $repo->login($username, $password);
 
-        if ($count > 0)
-            return ['connected'];
+        if ($count > 0) {
+            $user = $repo->findOneBy([
+                'username' => $username,
+                'password' => $password,
+            ]);
+
+            return [$user->getId()];
+        }
         else
             return [];
     }
