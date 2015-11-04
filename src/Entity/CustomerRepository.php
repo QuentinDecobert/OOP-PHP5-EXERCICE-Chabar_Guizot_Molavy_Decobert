@@ -35,6 +35,21 @@ class CustomerRepository extends EntityRepository
     }
 
 
+    public function login($username, $password)
+    {
+        $qb = $this->_em->createQueryBuilder('c');
 
+        $qb
+            ->select('count(c)')
+            ->from('App\Entity\Customer', 'c')
+            ->where('c.username = :username')
+            ->andWhere('c.password = :password')
+            ->setParameters([
+                'username' => $username,
+                'password' => $password,
+            ])
+        ;
 
+        return $qb->getQuery()->getSingleScalarResult();
+    }
 }
