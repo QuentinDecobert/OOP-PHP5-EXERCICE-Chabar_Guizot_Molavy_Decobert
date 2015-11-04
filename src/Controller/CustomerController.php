@@ -26,7 +26,7 @@ class CustomerController extends BaseController
 
     public function create()
     {
-        $param = json_decode($app->request->getBody());
+        //$param = json_decode($app->request->getBody());
         $username = $param->username;
         $lastname = $param->lastName;
         $firstname =  $param->firstName;

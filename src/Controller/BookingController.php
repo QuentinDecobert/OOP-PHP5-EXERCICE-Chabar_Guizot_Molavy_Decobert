@@ -18,7 +18,7 @@ class BookingController extends BaseController
     }
     public function create()
     {
-        $param = json_decode($app->request->getBody());
+      //  $param = json_decode($app->request->getBody());
         $number= $param->number;
         $price = $param->price;
         $concert = $param->concert;
