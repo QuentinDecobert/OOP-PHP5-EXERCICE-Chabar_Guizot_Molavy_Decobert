@@ -75,7 +75,7 @@ class Booking
      */
     public function getPrice()
     {
-        return $this->number;
+        return $this->price;
     }
 
 
@@ -84,7 +84,7 @@ class Booking
      */
     public function setPrice($price)
     {
-        $this->number = $number;
+        $this->price = $price;
     }
 
     /**
