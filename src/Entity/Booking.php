@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 /**
- * @Entity
+ * @Entity(repositoryClass="App\Entity\BookingRepository")
  * @Table(name="booking")
  */
 class Booking

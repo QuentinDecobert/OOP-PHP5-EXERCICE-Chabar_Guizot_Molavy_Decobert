@@ -3,7 +3,7 @@
 namespace App\Controller;
 
 
-class ConcertController
+class ConcertController extends BaseController
 {
     public function index()
     {
@@ -15,7 +15,7 @@ class ConcertController
 
     public function create()
     {
-            $param = json_decode($app->request->getBody());
+        /*
             $title = $param->title;
             $datetime = $param->datetime;
             $artist =  $param->artist;
@@ -39,7 +39,7 @@ class ConcertController
         $concert->setPicture($picture);
 
         $this->entityManager->persist($concert);
-        $this->entityManager->flush();
+        $this->entityManager->flush();*/
     }
     public function find($id)
     {
